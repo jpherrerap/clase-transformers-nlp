@@ -44,6 +44,7 @@ require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/text
 
 # Set variables
 # General
+account_hf = "TU CUENTA DE HUGGINGFACE" # en mi caso es "jorgeortizfuentes"
 task_name = "fake-news"
 last_checkpoint = None # Directorio del último checkpoint si quiero retomar un entrenamiento
 use_auth_token = True # Para usar datasets privados de HuggingFace y subir el modelo a HuggingFace Hub
@@ -59,7 +60,7 @@ overwrite_output_dir = True
 seed = 13
 
 # Datasets variables
-dataset_name = "jorgeortizfuentes/es_fakenews_dataset"
+dataset_name = f"{account_hf}/es_fakenews_dataset"
 dataset_config_name = None
 pad_to_max_length = True
 max_train_samples = None # Por ej 1000 si no quiero entrenar con todo el dataset de training (sirve para pruebas)

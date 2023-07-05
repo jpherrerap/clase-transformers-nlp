@@ -42,6 +42,7 @@ require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/text
 # Set variables
 
 # General
+account_hf = "TU CUENTA DE HUGGINGFACE" # en mi caso es "jorgeortizfuentes"
 task_name = "nominal-groups-recognition"
 last_checkpoint = None # Directorio del último checkpoint si quiero retomar un entrenamiento
 use_auth_token = True # Para usar datasets privados de HuggingFace y subir el modelo a HuggingFace Hub
@@ -58,7 +59,7 @@ seed = 13
 preprocessing_num_workers = 2
 
 # Datasets variables
-dataset_name = "jorgeortizfuentes/spanish_nominal_groups_conll2003"
+dataset_name = f"{account_hf}/spanish_nominal_groups_conll2003"
 text_column_name = "tokens"
 label_column_name = "ng_tags"
 dataset_config_name = None
