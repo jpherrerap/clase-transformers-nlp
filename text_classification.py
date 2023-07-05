@@ -1,3 +1,6 @@
+"""
+Fine-tuning de los modelos de HuggingFace para text classification.
+"""
 # Archivo adaptado de https://github.com/huggingface/transformers/blob/main/examples/pytorch/text-classification/run_glue.py 
 # (5 de julio de 2023)
 # Preparado para correr con Python 3.10
