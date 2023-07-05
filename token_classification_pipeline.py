@@ -1,4 +1,4 @@
-from transformers import AutoTokenizer, AutoModelForTokenClassification, pipeline
+from transformers import AutoTokenizer, pipeline
 
 hf_account = "jorgeortizfuentes"
 model_name = "nominal-groups-recognition-bert-base-spanish-wwm-cased"
