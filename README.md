@@ -8,5 +8,7 @@ En esta clase se verá cómo utilizar Transformers para resolver tareas de NLP. 
 
 ## Archivos
 
-Las tareas de clasificación de textos y clasificación de tokens se dividen en dos archivos cada una. Primero, un archivo `upload...ipynb` para convertir los datasets al formato de HuggingFace y subirlo al Hub. Luego, un archivo `.py` para finetunear un modelo. La tarea de generación de texto se encuentra en el archivo `text_generation.ipynb`.
+Las tareas de clasificación de textos y clasificación de tokens se dividen en tres archivos cada una. Primero, un archivo `upload...ipynb` para convertir los datasets al formato de HuggingFace y subirlo al Hub. Luego, un archivo `.py` para finetunear un modelo. Finalmente, un archivo `inference...py` para hacer inferencias con los modelos finetuneados.
+
+La tarea de generación de texto se encuentra en el archivo `text_generation.ipynb`.
 
