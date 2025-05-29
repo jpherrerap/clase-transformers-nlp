@@ -61,35 +61,35 @@ language = text_classification_args.language
 overwrite_output_dir = text_classification_args.overwrite_output_dir
 seed = text_classification_args.seed
 
-# # Datasets variables
-# dataset_name = f"{account_hf}/es_fakenews_dataset"
-# dataset_config_name = None
-# pad_to_max_length = True
-# max_train_samples = None # Por ej 1000 si no quiero entrenar con todo el dataset de training (sirve para pruebas)
-# max_eval_samples = None # si no quiero evaluar con todo el dataset de evaluación
-# max_predict_samples = None # si no quiero predecir con todo el dataset de testing
+# Datasets variables
+dataset_name = text_classification_args.dataset_name
+dataset_config_name = text_classification_args.dataset_config_name
+pad_to_max_length = text_classification_args.pad_to_max_length
+max_train_samples = text_classification_args.max_train_samples
+max_eval_samples = text_classification_args.max_eval_samples
+max_predict_samples = text_classification_args.max_predict_samples
 
-# # Task and models
-# learning_rate = 2e-5
-# lr_scheduler_type = "linear"
-# auto_find_batch_size = True
-# per_device_train_batch_size = 8
-# per_device_eval_batch_size = 8
-# max_seq_length = 512
-# optim = "adamw_torch"
-# weight_decay = 0.01
-# num_train_epochs = 2
-# save_total_limit = 2
-# is_regression = False
-# model_name_or_path = "dccuchile/bert-base-spanish-wwm-cased"
-# use_fast_tokenizer = False
-# ignore_mismatched_sizes = True
-# fp16 = False
-# output_dir = f"models/{task_name}-{model_name_or_path.split('/')[-1]}"
-# evaluation_strategy = "epoch" # or "steps"
-# save_strategy = "epoch" # or "steps"
-# load_best_model_at_end = True
-# save_safetensors = True
+# Task and models
+learning_rate = text_classification_args.learning_rate
+lr_scheduler_type = text_classification_args.lr_scheduler_type
+auto_find_batch_size = text_classification_args.auto_find_batch_size
+per_device_train_batch_size = text_classification_args.per_device_train_batch_size
+per_device_eval_batch_size = text_classification_args.per_device_eval_batch_size
+max_seq_length = text_classification_args.max_seq_length
+optim = text_classification_args.optim
+weight_decay = text_classification_args.weight_decay
+num_train_epochs = text_classification_args.num_train_epochs
+save_total_limit = text_classification_args.save_total_limit
+is_regression = text_classification_args.is_regression
+model_name_or_path = text_classification_args.model_name_or_path
+use_fast_tokenizer = text_classification_args.use_fast_tokenizer
+ignore_mismatched_sizes = text_classification_args.ignore_mismatched_sizes
+fp16 = text_classification_args.fp16
+output_dir = text_classification_args.output_dir
+evaluation_strategy = text_classification_args.evaluation_strategy
+save_strategy = text_classification_args.save_strategy
+load_best_model_at_end = text_classification_args.load_best_model_at_end
+save_safetensors = text_classification_args.save_safetensors
 
 
 
