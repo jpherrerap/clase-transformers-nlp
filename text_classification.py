@@ -51,50 +51,50 @@ require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/text
 
 # Set variables
 # General
-account_hf = text_classification_args.account_hf
-task_name = text_classification_args.task_name
-last_checkpoint = text_classification_args.last_checkpoint
-token = text_classification_args.token
-push_to_hub = text_classification_args.push_to_hub
-do_train = text_classification_args.do_train
-do_eval = text_classification_args.do_eval
-do_predict = text_classification_args.do_predict
-output_predict_file = text_classification_args.output_predict_file
-evaluate_metric = text_classification_args.evaluate_metric
-resume_from_checkpoint = text_classification_args.resume_from_checkpoint
-language = text_classification_args.language
-overwrite_output_dir = text_classification_args.overwrite_output_dir
-seed = text_classification_args.seed
+account_hf = text_classification_args['account_hf']
+task_name = text_classification_args['task_name']
+last_checkpoint = text_classification_args['last_checkpoint']
+token = text_classification_args['token']
+push_to_hub = text_classification_args['push_to_hub']
+do_train = text_classification_args['do_train']
+do_eval = text_classification_args['do_eval']
+do_predict = text_classification_args['do_predict']
+output_predict_file = text_classification_args['output_predict_file']
+evaluate_metric = text_classification_args['evaluate_metric']
+resume_from_checkpoint = text_classification_args['resume_from_checkpoint']
+language = text_classification_args['language']
+overwrite_output_dir = text_classification_args['overwrite_output_dir']
+seed = text_classification_args['seed']
 
 # Datasets variables
-dataset_name = text_classification_args.dataset_name
-dataset_config_name = text_classification_args.dataset_config_name
-pad_to_max_length = text_classification_args.pad_to_max_length
-max_train_samples = text_classification_args.max_train_samples
-max_eval_samples = text_classification_args.max_eval_samples
-max_predict_samples = text_classification_args.max_predict_samples
+dataset_name = text_classification_args['dataset_name']
+dataset_config_name = text_classification_args['dataset_config_name']
+pad_to_max_length = text_classification_args['pad_to_max_length']
+max_train_samples = text_classification_args['max_train_samples']
+max_eval_samples = text_classification_args['max_eval_samples']
+max_predict_samples = text_classification_args['max_predict_samples']
 
 # Task and models
-learning_rate = text_classification_args.learning_rate
-lr_scheduler_type = text_classification_args.lr_scheduler_type
-auto_find_batch_size = text_classification_args.auto_find_batch_size
-per_device_train_batch_size = text_classification_args.per_device_train_batch_size
-per_device_eval_batch_size = text_classification_args.per_device_eval_batch_size
-max_seq_length = text_classification_args.max_seq_length
-optim = text_classification_args.optim
-weight_decay = text_classification_args.weight_decay
-num_train_epochs = text_classification_args.num_train_epochs
-save_total_limit = text_classification_args.save_total_limit
-is_regression = text_classification_args.is_regression
-model_name_or_path = text_classification_args.model_name_or_path
-use_fast_tokenizer = text_classification_args.use_fast_tokenizer
-ignore_mismatched_sizes = text_classification_args.ignore_mismatched_sizes
-fp16 = text_classification_args.fp16
-output_dir = text_classification_args.output_dir
-evaluation_strategy = text_classification_args.evaluation_strategy
-save_strategy = text_classification_args.save_strategy
-load_best_model_at_end = text_classification_args.load_best_model_at_end
-save_safetensors = text_classification_args.save_safetensors
+learning_rate = text_classification_args['learning_rate']
+lr_scheduler_type = text_classification_args['lr_scheduler_type']
+auto_find_batch_size = text_classification_args['auto_find_batch_size']
+per_device_train_batch_size = text_classification_args['per_device_train_batch_size']
+per_device_eval_batch_size = text_classification_args['per_device_eval_batch_size']
+max_seq_length = text_classification_args['max_seq_length']
+optim = text_classification_args['optim']
+weight_decay = text_classification_args['weight_decay']
+num_train_epochs = text_classification_args['num_train_epochs']
+save_total_limit = text_classification_args['save_total_limit']
+is_regression = text_classification_args['is_regression']
+model_name_or_path = text_classification_args['model_name_or_path']
+use_fast_tokenizer = text_classification_args['use_fast_tokenizer']
+ignore_mismatched_sizes = text_classification_args['ignore_mismatched_sizes']
+fp16 = text_classification_args['fp16']
+output_dir = text_classification_args['output_dir']
+evaluation_strategy = text_classification_args['evaluation_strategy']
+save_strategy = text_classification_args['save_strategy']
+load_best_model_at_end = text_classification_args['load_best_model_at_end']
+save_safetensors = text_classification_args['save_safetensors']
 
 
 
