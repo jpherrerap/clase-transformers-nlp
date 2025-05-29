@@ -307,7 +307,7 @@ training_args = TrainingArguments(output_dir=text_classification_args['output_di
                                   fp16=text_classification_args['fp16'] ,
                                   metric_for_best_model=text_classification_args['evaluate_metric'],
                                   seed=text_classification_args['seed'],
-                                #   data_seed=text_classification_args['data_seed'] ,
+                                  data_seed=text_classification_args['seed'] ,
                                   optim=text_classification_args['optim'] ,
                                   save_total_limit=text_classification_args['save_total_limit'] ,
                                   save_safetensors=text_classification_args['save_safetensors'] ,
