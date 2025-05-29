@@ -46,50 +46,50 @@ require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/text
 
 # Set variables
 # General
-account_hf = "TU CUENTA DE HUGGINGFACE" # en mi caso es "jorgeortizfuentes"
-task_name = "fake-news"
-last_checkpoint = None # Directorio del último checkpoint si quiero retomar un entrenamiento
-token = True # Para usar datasets privados de HuggingFace y subir el modelo a HuggingFace Hub
-push_to_hub = True # Para subir el modelo a HuggingFace Hub
-do_train = True
-do_eval = True
-do_predict = True
-output_predict_file = "predictions.txt"
-evaluate_metric = "f1"
-resume_from_checkpoint = None
-language = "es"
-overwrite_output_dir = True
-seed = 13
+account_hf = text_classification_args.account_hf
+task_name = text_classification_args.task_name
+last_checkpoint = text_classification_args.last_checkpoint
+token = text_classification_args.token
+push_to_hub = text_classification_args.push_to_hub
+do_train = text_classification_args.do_train
+do_eval = text_classification_args.do_eval
+do_predict = text_classification_args.do_predict
+output_predict_file = text_classification_args.output_predict_file
+evaluate_metric = text_classification_args.evaluate_metric
+resume_from_checkpoint = text_classification_args.resume_from_checkpoint
+language = text_classification_args.language
+overwrite_output_dir = text_classification_args.overwrite_output_dir
+seed = text_classification_args.seed
 
-# Datasets variables
-dataset_name = f"{account_hf}/es_fakenews_dataset"
-dataset_config_name = None
-pad_to_max_length = True
-max_train_samples = None # Por ej 1000 si no quiero entrenar con todo el dataset de training (sirve para pruebas)
-max_eval_samples = None # si no quiero evaluar con todo el dataset de evaluación
-max_predict_samples = None # si no quiero predecir con todo el dataset de testing
+# # Datasets variables
+# dataset_name = f"{account_hf}/es_fakenews_dataset"
+# dataset_config_name = None
+# pad_to_max_length = True
+# max_train_samples = None # Por ej 1000 si no quiero entrenar con todo el dataset de training (sirve para pruebas)
+# max_eval_samples = None # si no quiero evaluar con todo el dataset de evaluación
+# max_predict_samples = None # si no quiero predecir con todo el dataset de testing
 
-# Task and models
-learning_rate = 2e-5
-lr_scheduler_type = "linear"
-auto_find_batch_size = True
-per_device_train_batch_size = 8
-per_device_eval_batch_size = 8
-max_seq_length = 512
-optim = "adamw_torch"
-weight_decay = 0.01
-num_train_epochs = 2
-save_total_limit = 2
-is_regression = False
-model_name_or_path = "dccuchile/bert-base-spanish-wwm-cased"
-use_fast_tokenizer = False
-ignore_mismatched_sizes = True
-fp16 = False
-output_dir = f"models/{task_name}-{model_name_or_path.split('/')[-1]}"
-evaluation_strategy = "epoch" # or "steps"
-save_strategy = "epoch" # or "steps"
-load_best_model_at_end = True
-save_safetensors = True
+# # Task and models
+# learning_rate = 2e-5
+# lr_scheduler_type = "linear"
+# auto_find_batch_size = True
+# per_device_train_batch_size = 8
+# per_device_eval_batch_size = 8
+# max_seq_length = 512
+# optim = "adamw_torch"
+# weight_decay = 0.01
+# num_train_epochs = 2
+# save_total_limit = 2
+# is_regression = False
+# model_name_or_path = "dccuchile/bert-base-spanish-wwm-cased"
+# use_fast_tokenizer = False
+# ignore_mismatched_sizes = True
+# fp16 = False
+# output_dir = f"models/{task_name}-{model_name_or_path.split('/')[-1]}"
+# evaluation_strategy = "epoch" # or "steps"
+# save_strategy = "epoch" # or "steps"
+# load_best_model_at_end = True
+# save_safetensors = True
 
 
 
