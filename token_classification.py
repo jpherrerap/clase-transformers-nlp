@@ -2,7 +2,7 @@
 Fine-tuning de los modelos de HuggingFace para token classification.
 """
 # Archivo adaptado de https://github.com/huggingface/transformers/blob/main/examples/pytorch/token-classification/run_ner.py 
-# (5 de julio de 2023)
+# (29 de mayo de 2025)
 # Preparado para correr con Python 3.10
 
 import logging
@@ -36,7 +36,7 @@ from transformers.utils.versions import require_version
 logger = logging.getLogger(__name__)
 
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
-check_min_version("4.30.2")
+check_min_version("4.51.3")
 require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/text-classification/requirements.txt")
 
 # Set variables
@@ -45,7 +45,7 @@ require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/text
 account_hf = "TU CUENTA DE HUGGINGFACE" # en mi caso es "jorgeortizfuentes"
 task_name = "nominal-groups-recognition"
 last_checkpoint = None # Directorio del último checkpoint si quiero retomar un entrenamiento
-use_auth_token = True # Para usar datasets privados de HuggingFace y subir el modelo a HuggingFace Hub
+token = True # Para usar datasets privados de HuggingFace y subir el modelo a HuggingFace Hub
 push_to_hub = True # Para subir el modelo a HuggingFace Hub
 do_train = True
 do_eval = True
@@ -77,7 +77,7 @@ auto_find_batch_size = True
 per_device_train_batch_size = 8
 per_device_eval_batch_size = 8
 max_seq_length = 512
-optim = "adamw_hf"
+optim = "adamw_torch"
 weight_decay = 0.01
 num_train_epochs = 2
 save_total_limit = 2
@@ -134,9 +134,10 @@ set_seed(seed)
 if dataset_name is not None:
     # Downloading and loading a dataset from the hub.
     raw_datasets = load_dataset(
-        dataset_name,
-        dataset_config_name,
-        use_auth_token=True if use_auth_token else None,
+            dataset_name,
+            dataset_config_name,
+            cache_dir=".hf_cache",
+            token=True if token else None,
     )
 # See more about loading any type of standard or custom dataset (from files, python dict, pandas DataFrame, etc) at
 # https://huggingface.co/docs/datasets/loading_datasets.html.
@@ -193,28 +194,28 @@ config = AutoConfig.from_pretrained(
     model_name_or_path,
     num_labels=num_labels,
     finetuning_task=task_name,
-    use_auth_token=True if use_auth_token else None,
+    token=True if token else None,
 )
 
 if config.model_type in {"bloom", "gpt2", "roberta"}:
     tokenizer = AutoTokenizer.from_pretrained(
         model_name_or_path,
         use_fast=True,
-        use_auth_token=True if use_auth_token else None,
+        token=True if token else None,
         add_prefix_space=True,
     )
 else:
     tokenizer = AutoTokenizer.from_pretrained(
         model_name_or_path,
         use_fast=True,
-        use_auth_token=True if use_auth_token else None,
+        token=True if token else None,
     )
 
 model = AutoModelForTokenClassification.from_pretrained(
     model_name_or_path,
     from_tf=bool(".ckpt" in model_name_or_path),
     config=config,
-    use_auth_token=True if use_auth_token else None,
+    token=True if token else None,
     ignore_mismatched_sizes=ignore_mismatched_sizes,
 )
 
