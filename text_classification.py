@@ -35,6 +35,8 @@ from transformers.trainer_utils import get_last_checkpoint
 from transformers.utils import check_min_version, send_example_telemetry
 from transformers.utils.versions import require_version
 
+import json
+text_classification_args = json.loads(os.path.abspath(sys.argv[1]))
 
 logger = logging.getLogger(__name__)
 
@@ -285,30 +287,30 @@ elif fp16:
 else:
     data_collator = None
 
-training_args = TrainingArguments(output_dir=output_dir, 
-                                  overwrite_output_dir=overwrite_output_dir,
-                                    eval_strategy=evaluation_strategy, 
-                                    save_strategy=save_strategy,
-                                    load_best_model_at_end=load_best_model_at_end,
-                                    learning_rate=learning_rate, 
-                                    lr_scheduler_type=lr_scheduler_type,
-                                    per_device_train_batch_size=per_device_train_batch_size,
-                                    per_device_eval_batch_size=per_device_eval_batch_size,
-                                    auto_find_batch_size=True,
-                                    num_train_epochs=num_train_epochs, 
-                                    weight_decay=weight_decay, 
-                                    fp16=fp16,
-                                    metric_for_best_model=f"eval_{evaluate_metric}",
-                                    seed=seed,
-                                    data_seed=seed,
-                                    optim=optim,
-                                    save_total_limit=save_total_limit,
-                                    save_safetensors=save_safetensors,
-                                    hub_strategy="end" if push_to_hub else None,
-                                    push_to_hub = push_to_hub,
-                                    logging_strategy = "epoch",
-                                    report_to="none",
-                                    )      
+training_args = TrainingArguments(output_dir=text_classification_args.output_dir , 
+                                  overwrite_output_dir=text_classification_args.overwrite_output_dir ,
+                                  eval_strategy=text_classification_args.eval_strategy , 
+                                  save_strategy=text_classification_args.save_strategy ,
+                                  load_best_model_at_end=text_classification_args.load_best_model_at_end ,
+                                  learning_rate=text_classification_args.learning_rate , 
+                                  lr_scheduler_type=text_classification_args.lr_scheduler_type ,
+                                  per_device_train_batch_size=text_classification_args.per_device_train_batch_size ,
+                                  per_device_eval_batch_size=text_classification_args.per_device_eval_batch_size ,
+                                  auto_find_batch_size=text_classification_args.auto_find_batch_size ,
+                                  num_train_epochs=text_classification_args.num_train_epochs , 
+                                  weight_decay=text_classification_args.weight_decay , 
+                                  fp16=text_classification_args.fp16 ,
+                                  metric_for_best_model=text_classification_args.metric_for_best_model,
+                                  seed=text_classification_args.seed,
+                                  data_seed=text_classification_args.data_seed ,
+                                  optim=text_classification_args.optim ,
+                                  save_total_limit=text_classification_args.save_total_limit ,
+                                  save_safetensors=text_classification_args.save_safetensors ,
+                                  hub_strategy=text_classification_args.hub_strategy if text_classification_args.hub_strategy else None,
+                                  push_to_hub=text_classification_args.push_to_hub ,
+                                  logging_strategy=text_classification_args.logging_strategy,
+                                  report_to=text_classification_args.report_to if text_classification_args.hub_strategy else "none",
+                                  )      
 
 
 # Initialize our Trainer
