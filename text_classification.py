@@ -305,7 +305,7 @@ training_args = TrainingArguments(output_dir=text_classification_args['output_di
                                   num_train_epochs=text_classification_args['num_train_epochs'] , 
                                   weight_decay=text_classification_args['weight_decay'] , 
                                   fp16=text_classification_args['fp16'] ,
-                                  metric_for_best_model=text_classification_args['metric_for_best_model'],
+                                  metric_for_best_model=text_classification_args['evaluate_metric'],
                                   seed=text_classification_args['seed'],
                                   data_seed=text_classification_args['data_seed'] ,
                                   optim=text_classification_args['optim'] ,
