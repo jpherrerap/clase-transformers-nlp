@@ -39,5 +39,6 @@
     "max_train_samples": null,
     "max_eval_samples": null,
     "max_predict_samples": null,
-    "cache_dir": ".hf_cache"
+    "cache_dir": ".hf_cache",
+    "token": true
 }
