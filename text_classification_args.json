@@ -29,7 +29,7 @@
     "ignore_mismatched_sizes": true,
     "fp16": false,
     "output_dir": "models/fake-news-bert-base-spanish-wwm-cased",
-    "evaluation_strategy": "epoch",
+    "eval_strategy": "epoch",
     "save_strategy": "epoch",
     "load_best_model_at_end": true,
     "save_safetensors": true,
