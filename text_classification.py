@@ -36,7 +36,12 @@ from transformers.utils import check_min_version, send_example_telemetry
 from transformers.utils.versions import require_version
 
 import json
-text_classification_args = json.loads(os.path.abspath(sys.argv[1]))
+
+json_file_path = os.path.abspath(sys.argv[1])
+text_classification_args = {}
+with open(json_file_path, 'r') as j:
+     text_classification_args = json.loads(j.read())
+
 
 logger = logging.getLogger(__name__)
 
